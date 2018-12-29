@@ -6,11 +6,6 @@ const axios = require("axios");
 const Spotify = require('node-spotify-api');
 const keys = require("./keys");
 
-// var spotify = new Spotify({
-//     id: '9bbc19f28d9e485384179b909802c826',
-//     secret: 'b69857d64b134dbeaf51013150cec2c7'
-// });
-
 var spotify = new Spotify(keys.spotify)
 
 var userInput = process.argv[2];
@@ -23,8 +18,7 @@ var divider = "\n------------------------------------------------------------\n\
 userCommand(userInput, userQuery)
 
 function userCommand(userInput, userQuery) {
-    //console.log("User input value: " + userInput);
-    //console.log("User query value: " + userQuery);
+    
     switch (userInput) {
 
         case "concert-this":
@@ -148,7 +142,6 @@ function doThis() {
         var dataArr = data.split(",");
         userInput = dataArr[0];
         userQuery = dataArr[1];
-        // userCommand(userInput, userQuery);
         spotifyThisSong(userQuery);
     });
 };
